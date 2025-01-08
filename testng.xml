@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="All Test Suite">
-    <test verbose="2" preserve-order="true" name="C:/Users/SwadhinKumarJena/IdeaProjects/Cucumber_Framework/src/test">
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite" verbose="1" parallel="false">
+    <!-- Define the test block -->
+    <test name="Cucumber TestNG Runner">
+        <!-- Specify the classes to be executed -->
         <classes>
             <class name="org.Runner.RunnerTest"/>
         </classes>

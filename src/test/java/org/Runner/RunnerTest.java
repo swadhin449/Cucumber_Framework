@@ -13,11 +13,11 @@ import org.testng.annotations.Test;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/test/java/org/features/DataDrivenSearch.feature",
+        features = "src/test/java/org/features/HomePage.feature",
         glue = {"org.StepDef"},
         plugin = {"pretty", "html:target/cucumber-reports"},
         monochrome = true,
-        tags = "@DatadrivenCucumber",
+        tags = "@HomePage",
         dryRun = false,
         snippets = CucumberOptions.SnippetType.CAMELCASE
 )
@@ -32,8 +32,8 @@ public class RunnerTest {
     public void feature(PickleWrapper pickleWrapper, FeatureWrapper featureWrapper) {
         testNGCucumberRunner.runScenario(pickleWrapper.getPickle());
     }
-    @DataProvider
-    public Object[][] scenarios() {
+    @DataProvider(name = "features") // Ensure the DataProvider is named 'features'
+    public Object[][] features() {
         return testNGCucumberRunner.provideScenarios();
     }
     @AfterClass(alwaysRun = true)
